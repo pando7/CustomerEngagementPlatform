@@ -60,7 +60,7 @@ services:
         XDEBUG_LOG: /dev/stdout
         XDEBUG_LOG_LEVEL: 0
     ports:
-      - '${VITE_PORT:-5173}:5173'
+      - '127.0.0.1:${VITE_PORT:-5173}:5173'
     tty: true  # Enables an interactive terminal
     stdin_open: true  # Keeps standard input open for 'docker exec'
     env_file:
@@ -96,7 +96,7 @@ services:
     image: redis:alpine
     networks:
       - laravel-development
-  
+
   adminer:
     image: dockette/adminer:full
     container_name: laravel_adminer
